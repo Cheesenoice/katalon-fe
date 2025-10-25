@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  # Development service
+  katalon-dev:
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: development
+    container_name: katalon-development
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules # Anonymous volume to prevent overwriting node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - katalon-network
+    restart: unless-stopped
+    profiles:
+      - dev
+
+  # Production service
+  katalon-prod:
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: production
+    container_name: katalon-production
+    ports:
+      - "80:80"
+      - "443:443" # For HTTPS if needed
+    environment:
+      - NODE_ENV=production
+    networks:
+      - katalon-network
+    restart: unless-stopped
+    profiles:
+      - prod
+
+  # Build service (for CI/CD or manual builds)
+#   katalon-build:
+#     build:
+#       context: .
+#       dockerfile: dockerfile
+#       target: build
+#     container_name: katalon-build
+#     volumes:
+#       - ./dist:/app/dist # Mount dist folder to get build artifacts
+#     environment:
+#       - NODE_ENV=production
+#     networks:
+#       - katalon-network
+#     profiles:
+#       - build
+
+# networks:
+#   katalon-network:
+#     driver: bridge

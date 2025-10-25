@@ -1,4 +1,4 @@
-import katalonIcon from "../assets/Katalon-icon.png";
+import katalonLogo from "../assets/katalon_logo.svg";
 import leftRibbon from "../assets/left-ribbon.png";
 import rightRibbon from "../assets/right-ribbon.png";
 
@@ -42,19 +42,19 @@ export default function TimelinePage() {
       <img
         src={leftRibbon}
         alt="Left ribbon"
-        className="absolute left-0 top-0 h-100 w-auto z-10 object-cover"
+        className="absolute left-0 top-0 h-25 w-auto md:h-50 lg:h-80 z-10 object-cover"
       />
       <img
         src={rightRibbon}
         alt="Right ribbon"
-        className="absolute right-0 top-0 h-100 w-auto z-10 object-cover"
+        className="absolute right-0 top-0 h-25 w-auto md:h-50 lg:h-80 z-10 object-cover"
       />
 
       {/* Main Content */}
       <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 py-8">
         {/* Katalon Logo and Icon */}
-        <div className="flex items-center gap-4 mb-8">
-          <img src={katalonIcon} alt="Katalon" className="w-60 h-auto" />
+        <div className="flex items-center gap-4 mb-8 mt-40">
+          <img src={katalonLogo} alt="Katalon" className="w-60 h-auto" />
         </div>
 
         {/* Star */}
