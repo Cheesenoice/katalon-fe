@@ -61,33 +61,33 @@ export default function CountdownPage() {
         <div className="text-6xl mb-12">✨</div>
 
         {/* Time Labels */}
-        <div className="flex gap-12 md:gap-20 lg:gap-32 mb-6">
-          <div className="text-center w-24 md:w-32 lg:w-40">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-black">
+        <div className="flex gap-4 sm:gap-8 md:gap-20 lg:gap-32 mb-6">
+          <div className="text-center w-20 sm:w-24 md:w-32 lg:w-40">
+            <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-semibold text-black">
               Hours
             </h2>
           </div>
-          <div className="text-center w-24 md:w-32 lg:w-40">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-black">
+          <div className="text-center w-20 sm:w-24 md:w-32 lg:w-40">
+            <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-semibold text-black">
               Minutes
             </h2>
           </div>
-          <div className="text-center w-24 md:w-32 lg:w-40">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-black">
+          <div className="text-center w-20 sm:w-24 md:w-32 lg:w-40">
+            <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-semibold text-black">
               Seconds
             </h2>
           </div>
         </div>
 
         {/* Countdown Timer */}
-        <div className="flex gap-12 md:gap-20 lg:gap-32 mb-12">
+        <div className="flex gap-4 sm:gap-8 md:gap-20 lg:gap-32 mb-12">
           {/* Hours */}
           <div
-            className="rounded-3xl p-4 md:p-6 lg:p-8 w-24 md:w-32 lg:w-40 shadow-lg"
+            className="rounded-2xl sm:rounded-3xl p-2 sm:p-4 md:p-6 lg:p-8 w-20 sm:w-24 md:w-32 lg:w-40 shadow-lg"
             style={{ backgroundColor: "#ffd815" }}
           >
             <div
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-center"
+              className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-center"
               style={{ color: "#9a4dd2" }}
             >
               {formatTime(time.hours)}
@@ -96,21 +96,21 @@ export default function CountdownPage() {
 
           {/* Minutes */}
           <div
-            className="rounded-3xl p-4 md:p-6 lg:p-8 w-24 md:w-32 lg:w-40 shadow-lg"
+            className="rounded-2xl sm:rounded-3xl p-2 sm:p-4 md:p-6 lg:p-8 w-20 sm:w-24 md:w-32 lg:w-40 shadow-lg"
             style={{ backgroundColor: "#52be96" }}
           >
-            <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center">
+            <div className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center">
               {formatTime(time.minutes)}
             </div>
           </div>
 
           {/* Seconds */}
           <div
-            className="rounded-3xl p-4 md:p-6 lg:p-8 w-24 md:w-32 lg:w-40 shadow-lg"
+            className="rounded-2xl sm:rounded-3xl p-2 sm:p-4 md:p-6 lg:p-8 w-20 sm:w-24 md:w-32 lg:w-40 shadow-lg"
             style={{ backgroundColor: "#9a4dd2" }}
           >
             <div
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-center"
+              className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-center"
               style={{ color: "#ffd815" }}
             >
               {formatTime(time.seconds)}
