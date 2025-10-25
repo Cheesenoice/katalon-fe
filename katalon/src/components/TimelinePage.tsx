@@ -111,7 +111,7 @@ export default function TimelinePage() {
                 {activity.items.map((item, index) => (
                   <p
                     key={index}
-                    className="text-sm md:text-base text-black mb-3 leading-relaxed"
+                    className="text-xs md:text-base text-black mb-3 leading-relaxed"
                   >
                     {item}
                   </p>
@@ -123,7 +123,7 @@ export default function TimelinePage() {
 
         {/* CTA Button */}
         <button
-          className="text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all"
+          className="text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold hover:opacity-90 transition-all max-w-xs sm:max-w-md text-center"
           style={{ backgroundColor: "#9a4dd2" }}
         >
           Mark your calendar so you don't miss out on our latest updates and

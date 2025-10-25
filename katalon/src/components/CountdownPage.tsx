@@ -3,7 +3,11 @@ import katalonLogo from "../assets/katalon_logo.svg";
 import leftRibbon from "../assets/left-ribbon.png";
 import rightRibbon from "../assets/right-ribbon.png";
 
-export default function CountdownPage() {
+interface CountdownPageProps {
+  onComplete: () => void;
+}
+
+export default function CountdownPage({ onComplete }: CountdownPageProps) {
   const [time, setTime] = useState({
     hours: 0,
     minutes: 1,
@@ -27,12 +31,17 @@ export default function CountdownPage() {
           return { hours: hours - 1, minutes: 59, seconds: 59 };
         }
 
+        // When countdown reaches 00:00:00, call onComplete
+        if (hours === 0 && minutes === 0 && seconds === 0) {
+          onComplete();
+        }
+
         return prevTime; // Stop at 00:00:00
       });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [onComplete]);
 
   const formatTime = (num: number) => num.toString().padStart(2, "0");
 
@@ -125,7 +134,7 @@ export default function CountdownPage() {
 
         {/* CTA Button */}
         <button
-          className="text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all"
+          className="text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold hover:opacity-90 transition-all"
           style={{ backgroundColor: "#9a4dd2" }}
         >
           Sign up to receive the latest news
