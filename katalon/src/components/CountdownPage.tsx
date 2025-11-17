@@ -10,8 +10,8 @@ interface CountdownPageProps {
 export default function CountdownPage({ onComplete }: CountdownPageProps) {
   const [time, setTime] = useState({
     hours: 0,
-    minutes: 1,
-    seconds: 0,
+    minutes: 0,
+    seconds: 10,
   });
 
   useEffect(() => {

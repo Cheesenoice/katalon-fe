@@ -1,4 +1,4 @@
-version: "3.8"
+# version: "3.8"
 
 services:
   # Development service
@@ -7,6 +7,7 @@ services:
       context: .
       dockerfile: dockerfile
       target: development
+    image: cheesenoice/katalon-dev:latest
     container_name: katalon-development
     ports:
       - "5173:5173"
@@ -18,26 +19,24 @@ services:
     networks:
       - katalon-network
     restart: unless-stopped
-    profiles:
-      - dev
 
   # Production service
-  katalon-prod:
-    build:
-      context: .
-      dockerfile: dockerfile
-      target: production
-    container_name: katalon-production
-    ports:
-      - "80:80"
-      - "443:443" # For HTTPS if needed
-    environment:
-      - NODE_ENV=production
-    networks:
-      - katalon-network
-    restart: unless-stopped
-    profiles:
-      - prod
+  # katalon-prod:
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfile
+  #     target: production
+  #   container_name: katalon-production
+  #   ports:
+  #     - "80:80"
+  #     - "443:443" # For HTTPS if needed
+  #   environment:
+  #     - NODE_ENV=production
+  #   networks:
+  #     - katalon-network
+  #   restart: unless-stopped
+  #   profiles:
+  #     - prod
 
   # Build service (for CI/CD or manual builds)
 #   katalon-build:
@@ -55,6 +54,6 @@ services:
 #     profiles:
 #       - build
 
-# networks:
-#   katalon-network:
-#     driver: bridge
+networks:
+  katalon-network:
+    driver: bridge

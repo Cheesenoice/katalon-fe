@@ -9,30 +9,22 @@ export default function TimelinePage() {
       title: "Activity #1",
       color: "#ffd815",
       items: [
-        "Live webinar #1 (5 June 2026): The Future of Testing Starts Here",
-        "Live webinar #2 (15 Aug 2026): Beyond Testing - Toward Intelligence",
+        "White-paper: #1 \u201cAI in Testing: 2026 UK Trends\u201d",
+        "Webinar: \u201cFuture of AI Test Automation for UK Enterprises\u201d",
+        "Demo Series",
       ],
     },
     {
       id: 2,
       title: "Activity #2",
       color: "#9a4dd2",
-      items: ["Participate in London Tech Week 2026 to showcase TrueTest"],
+      items: ["Technology Trade Show"],
     },
     {
       id: 3,
       title: "Activity #3",
       color: "#ea483d",
-      items: ["Live Product Demo & Networking Session/ Workshop"],
-    },
-    {
-      id: 4,
-      title: "Activity #4",
-      color: "#e37e83",
-      items: [
-        "Industry Media Interviews",
-        "Participating in interviews with leading UK technology and QA publications",
-      ],
+      items: ["Limited-Time Free Trial Promotion"],
     },
   ];
 
