@@ -68,7 +68,7 @@ export default function TimelinePage() {
         {/* Activities Timeline */}
         <div className="w-full max-w-7xl mb-12">
           {/* Activity Headers */}
-          <div className="grid grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-3 gap-4 mb-8">
             {activities.map((activity) => (
               <div key={activity.id} className="text-center">
                 <h3
@@ -84,7 +84,7 @@ export default function TimelinePage() {
           {/* Timeline Line with Dots */}
           <div className="relative mb-8">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-black transform -translate-y-1/2"></div>
-            <div className="grid grid-cols-4 relative">
+            <div className="grid grid-cols-3 relative">
               {activities.map((activity) => (
                 <div key={activity.id} className="flex justify-center">
                   <div
@@ -97,13 +97,13 @@ export default function TimelinePage() {
           </div>
 
           {/* Activity Content */}
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 gap-6">
             {activities.map((activity) => (
-              <div key={activity.id} className="text-left">
+              <div key={activity.id} className="text-center">
                 {activity.items.map((item, index) => (
                   <p
                     key={index}
-                    className="text-xs md:text-base text-black mb-3 leading-relaxed"
+                    className="text-xs md:text-base text-black mb-3 leading-relaxed text-center"
                   >
                     {item}
                   </p>
